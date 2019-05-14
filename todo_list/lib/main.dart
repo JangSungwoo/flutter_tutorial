@@ -25,11 +25,16 @@ class todo_list extends StatelessWidget{
           children: <Widget>
             [
               Center(
-                child: new Image.asset(
-                  'assets/todo.jpg',
-                  width:500,
-                  height:100,
+                child: Opacity(
+                  opacity:0.3,
+                  child:new Image.asset(
+                    'assets/todo.jpg',
+                    width:500,
+                    height:100,
+
+                  )
                 )
+
               ),
 
               ListView.builder(
