@@ -1,11 +1,12 @@
 import "package:flutter/material.dart";
 
-void main() {
-
-  runApp(new todo_list(
-    items: List<String>.generate(30, (i) => "Item $i"),
-  ));
-}
+/*
+Navigator를 할때 등가 교환이 되어야 한다.
+Context가 Wiget 전체를 감싸고 있다고 생각하면
+Navigator를 통해서 Context에 MererialApp이 포함된 Widget과
+Context에 Scaffold만 있는 위젯은 교환이 불가능 하다.
+ */
+void main() => runApp(new MaterialApp(title:"To-Do-List", home : todo_list(items: List<String>.generate(30, (i) => "Item $i"))));
 
 class todo_list extends StatelessWidget{
   final List<String> items;
@@ -14,10 +15,8 @@ class todo_list extends StatelessWidget{
 
   @override
 
-  Widget build(BuildContext ctxt) {
-    return new MaterialApp(
-      title:"To-Do-List",
-      home:Scaffold(
+  Widget build(BuildContext context) {
+    return new Scaffold(
         appBar: AppBar(
           title:Text("To-Do-List"),
         ),
@@ -34,7 +33,6 @@ class todo_list extends StatelessWidget{
 
                   )
                 )
-
               ),
 
               ListView.builder(
@@ -51,13 +49,24 @@ class todo_list extends StatelessWidget{
 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            a=a+1;
-            print(a);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Second_page())
+            );
           },
           child: Icon(Icons.add)
         ),
-      ),
-    );
+      );
   }
 }
 
+class Second_page extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar:AppBar(
+          title: Text("Hello"),
+      )
+    );
+  }
+}
