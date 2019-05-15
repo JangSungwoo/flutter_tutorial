@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+import 'package:todo_list/set_todo_page.dart';
 /*
 Navigator를 할때 등가 교환이 되어야 한다.
 Context가 Wiget 전체를 감싸고 있다고 생각하면
@@ -51,7 +52,7 @@ class todo_list extends StatelessWidget{
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Second_page())
+              MaterialPageRoute(builder: (context) => set_todo_page())
             );
           },
           child: Icon(Icons.add)
