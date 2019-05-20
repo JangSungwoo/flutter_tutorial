@@ -56,7 +56,7 @@ class todo_list extends StatelessWidget{
             );
           },
           child: Icon(Icons.add)
-        ),ㅋ
+        ),
       );
   }
 }
