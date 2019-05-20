@@ -2,10 +2,14 @@ import "package:flutter/material.dart";
 
 import 'package:intl/intl.dart';
 
-class set_todo_page extends StatelessWidget{
+class set_todo_page extends StatefulWidget{
+  @override
+  _set_todo_page createState() => new _set_todo_page();
+}
+class _set_todo_page extends State<set_todo_page>{
 
   DatePicker datePicker = new DatePicker();
-  DateTime _date = DateTime.now();
+  DateTime selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,31 +56,27 @@ class set_todo_page extends StatelessWidget{
                 fontSize: 30
             ),
           ),
-          FlatButton(
-            onPressed: (){
-             _date = datePicker.information(context);
-             print(new DateFormat.yMMMd().format(new DateTime.now()));
-            },
-            child: Text(
-                DateFormat.yMMMd().format(_date).toString()
-            ),
+          Center(
+          child:DatePicker2(),
           ),
           Container(
             alignment: Alignment.bottomRight,
-          child:RaisedButton(
-            onPressed: (){
-              Navigator.pop(context);
-            },
-            child:
-            Text(
+            child:RaisedButton(
+              onPressed: (){
+                Navigator.pop(context);
+                },
+              child:
+              Text(
                 "OK",
+              ),
             ),
           ),
-          ),
         ],
-      )
+       )
       )
     );
+
+
   }
 }
 class DatePicker{
@@ -96,40 +96,59 @@ class DatePicker{
   }
 }
 
+class DatePicker2 extends StatefulWidget {
 
-class dDatePicker extends StatefulWidget {
   @override
-  _DatePicker createState() => new _DatePicker();
+  _DatePicker2 createState() => new _DatePicker2();
 }
 
-//State is information of the application that can change over time or when some actions are taken.
-class _DatePicker extends State<dDatePicker>{
-
-  String _value = '';
-
-  Future _selectDate() async {
-    DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: new DateTime.now(),
-        firstDate: new DateTime(2016),
-        lastDate: new DateTime(2019)
-    );
-    if(picked != null) setState(() => _value = picked.toString());
-  }
+class _DatePicker2 extends State<DatePicker2>{
+  DateTime selectedDate = DateTime.now();
+  final DateFormat dateFormat = DateFormat('MM-dd HH:mm');
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: new Center(
-          child: new Column(
-            children: <Widget>[
-              new RaisedButton(
-                onPressed: _selectDate,
-                child: new Text('Click me'),
-              )
-            ],
+    return Row(
+      children:<Widget>[
+        Text(dateFormat.format(selectedDate)),
+        FlatButton(
+          onPressed: () async {
+            final selectedDate = await _selectDate(context);
+            final selectedTime = await _selectTime(context);
+            setState(() {
+              this.selectedDate = DateTime(
+                selectedDate.year,
+                selectedDate.month,
+                selectedDate.day,
+                selectedTime.hour,
+                selectedTime.minute,
+              );
+            });
+            },
+          child: Image.asset(
+            'assets/baseline_event_black_48dp.png',
+            height: 30,
           ),
+          color: Colors.transparent,
+          highlightColor: Colors.transparent,
         ),
+      ]
     );
   }
+
+  Future<TimeOfDay> _selectTime(BuildContext context){
+    final now = DateTime.now();
+
+    return showTimePicker(
+        context: context,
+        initialTime: TimeOfDay(hour: now.hour, minute: now.minute),
+    );
+  }
+  Future<DateTime> _selectDate(BuildContext context) =>
+      showDatePicker(
+        context: context,
+        initialDate: new DateTime.now(),
+        firstDate: new DateTime(2016),
+        lastDate: new DateTime(2030),
+      );
 }
