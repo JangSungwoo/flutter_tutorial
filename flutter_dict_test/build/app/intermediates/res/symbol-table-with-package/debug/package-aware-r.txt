@@ -1,0 +1,4 @@
+io.github.dldldldfma.flutter_dict_test
+drawable launch_background
+mipmap ic_launcher
+style LaunchTheme
