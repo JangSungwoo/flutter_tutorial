@@ -1,6 +1,6 @@
 # todolist1
 
-A new Flutter application.
+Flutter To-Do-List App
 
 ![Alt text](./todo_list.jpg)
 ## Getting Started
