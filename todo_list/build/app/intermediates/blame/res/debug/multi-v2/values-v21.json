@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jsw70\\Desktop\\jsw\\SW\\Flutter\\tutorial_src\\flutter_tutorial\\todo_list\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\ksg\\flutter_tutorial\\todo_list\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jsw70\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\9d7dfa34b1bc025d4b0378e2a64493f7\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\ksg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\7af648fdc40415072ab8ef46f4be7af7\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jsw70\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\18b598ed8fc00fcbdcd06304bd0704e6\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\ksg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\d0dda361f1c610ba325ca2e568673c2a\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

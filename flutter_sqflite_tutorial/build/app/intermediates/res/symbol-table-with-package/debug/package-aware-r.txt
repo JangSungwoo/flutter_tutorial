@@ -1,4 +1,0 @@
-io.github.dldldldfma.flutter_sqflite_tutorial
-drawable launch_background
-mipmap ic_launcher
-style LaunchTheme

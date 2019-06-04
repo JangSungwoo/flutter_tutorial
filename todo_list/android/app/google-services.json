@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "318645610611",
+    "firebase_url": "https://to-do-45df0.firebaseio.com",
+    "project_id": "to-do-45df0",
+    "storage_bucket": "to-do-45df0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318645610611:android:a2ca857d9af739c4",
+        "android_client_info": {
+          "package_name": "com.package.todolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318645610611-c3t70eod34nj7pvd9e3oitvvhifrh9ob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiClMYNNa-p3lZrRoxJV_6fyExKJvUv1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318645610611-c3t70eod34nj7pvd9e3oitvvhifrh9ob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-5693835159760507~9860897860"
+    }
+  ],
+  "configuration_version": "1"
+}

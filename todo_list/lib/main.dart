@@ -76,20 +76,22 @@ class MyApp extends StatelessWidget {
   }
   InitAdMob() {
     String appId = "ca-app-pub-5693835159760507~9860897860";
+    String myBannerId="ca-app-pub-5693835159760507/4225427806";
+    String TestDeviceId="DC0EF7D843685BD59F2409F0E83F85FA";//JSW
     FirebaseAdMob.instance.initialize(appId: appId);
 
     MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
       keywords: <String>['flutterio', 'beautiful apps'],
       contentUrl: 'https://flutter.io',
       childDirected: false,
-      testDevices: <String>[], // Android emulators are considered test devices
+      testDevices: <String>[TestDeviceId], // Android emulators are considered test devices
     );
 
     BannerAd myBanner = BannerAd(
       // Replace the testAdUnitId with an ad unit id from the AdMob dash.
       // https://developers.google.com/admob/android/test-ads
       // https://developers.google.com/admob/ios/test-ads
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: myBannerId,
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
